@@ -1,3 +1,9 @@
+If this code is used in a publication, please cite the manuscript:
+    "Electrical stimulation of temporal, limbic circuitry produces multiple distinct responses in human ventral temporal cortex"
+    by H Huang, NM Gregg, G Ojeda Valencia, BH Brinkmann, BN Lundstrom, GA Worrell, KJ Miller, and D Hermes.
+
+*****
+
 DEPENDENCIES
 
 - SPM12: https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
