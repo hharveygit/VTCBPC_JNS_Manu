@@ -1,6 +1,7 @@
 If this code is used in a publication, please cite the manuscript:
     "Electrical stimulation of temporal, limbic circuitry produces multiple distinct responses in human ventral temporal cortex"
-    by H Huang, NM Gregg, G Ojeda Valencia, BH Brinkmann, BN Lundstrom, GA Worrell, KJ Miller, and D Hermes.
+    by H Huang, NM Gregg, G Ojeda Valencia, BH Brinkmann, BN Lundstrom, GA Worrell, KJ Miller, and D Hermes. (Under Review)
+A preprint is available, in the meantime, at doi: https://doi.org/10.1101/2022.07.06.498994
 
 *****
 
@@ -18,7 +19,8 @@ DEPENDENCIES
 
 USAGE
 
-i. The data should be copied to a folder named "data", in the root-level code directory 
+i. The data used in this analysis will be available upon manuscript publication on OpenNeuro, in BIDS format, at doi:10.18112/openneuro.ds004457.v1.0.0.
+	Please download all the data and copy into a folder named "data", in the root level code directory.
 
 ii. Pial, cortical, and subcortical segmentations for each subject were obtained using Freesurfer v7. The relevant Freesurfer outputs for each subject are located in data/derivatives/freesurfer
 
