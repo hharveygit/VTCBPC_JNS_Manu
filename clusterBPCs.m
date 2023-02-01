@@ -190,7 +190,7 @@ end
 saveas(gcf, fullfile('output', 'clusterBPCs', 'giftiConsBPCs'), 'png');
 
 % Create distribution bar graphs and display the contingency table consensus BPC category x anatomic bin
-[tbl, ~, p_cont] = crosstab(allConsensusLabels, allStimRegions); % contingency table, chi2 independence test
+[tbl, chi2, p_cont] = crosstab(allConsensusLabels, allStimRegions); % contingency table, chi2 independence test
 disp(tbl); fprintf('chi-squared P = %.2e\n', p_cont);
 
 cmAnat = getCmapVTC('anat');
