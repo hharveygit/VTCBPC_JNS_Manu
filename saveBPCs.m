@@ -51,13 +51,17 @@ for subInd = 1:length(subs)
 
     % location of data to load for current subject
     subDir = fullfile(pwd, 'data', sprintf('sub-%s', sub), 'ses-ieeg01', 'ieeg');
-    mkdir('output', sprintf('sub-%s', sub));
+    mkdir(fullfile('output', sprintf('sub-%s', sub)));
 
     mefPath = fullfile(subDir, sprintf('sub-%s_ses-ieeg01_task-ccep_run-01_ieeg.mefd', sub));
     channelsPath = fullfile(subDir, sprintf('sub-%s_ses-ieeg01_task-ccep_run-01_channels.tsv', sub));
     eventsPath = fullfile(subDir, sprintf('sub-%s_ses-ieeg01_task-ccep_run-01_events.tsv', sub));
 
     mefObj = ccep_PreprocessMef(mefPath, channelsPath, eventsPath);
+    
+    nEles = sum(strcmp(mefObj.channels.type, 'SEEG'));
+    fprintf('%d SEEG channels\n', nEles);
+    
     mefObj.filterEvents('electrical_stimulation_current', {'4.0 mA', '6.0 mA'});
     mefObj.loadMefTrials([-1, 2]);
     mefObj.car(true); % by 64-block
@@ -179,7 +183,7 @@ for subInd = 1:length(subs)
         xyzs = [electrodes.x, electrodes.y, electrodes.z];
         xyzsPair = ieeg_getPairXyzs(split(sites(:, 1), '-', 2), electrodes);
 
-        f = figure('Position', [1000, 100, 1000, 800]); % normal gifti
+        f = figure('Position', [1000, 100, 800, 600]); % normal gifti
 
         ieeg_RenderGifti(gii); alpha 0.2; hold on
         switch hemis(subInd)

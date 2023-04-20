@@ -1,3 +1,4 @@
 /output
 /data
 /ignore
+*.DS_Store

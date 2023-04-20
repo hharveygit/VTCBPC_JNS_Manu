@@ -155,7 +155,7 @@ for jj = 1:length(chs)
     xyzs = [electrodes.x, electrodes.y, electrodes.z];
     xyzsPair = ieeg_getPairXyzs(split(sites(:, 1), '-', 2), electrodes);
      
-    f = figure('Position', [1000, 100, 1000, 800]); % normal gifti
+    f = figure('Position', [1000, 100, 800, 600]); % normal gifti
     
     ieeg_RenderGifti(gii); alpha 0.2; hold on
     switch hemis(subInd)
@@ -210,5 +210,13 @@ for jj = 1:length(chs)
         saveas(f, fullfile(meanTrialDir, sprintf('sub-%s_ch-%s_exc_meanTrials', sub, ch)), 'svg');
         close(f)
     end
+    
+    %% Save plotweights -- to use in plotInflatedT1slicesSub1_noCAR.m
+    
+    [~, order] = sortrows([BPCs_expanded(:, 1), -BPCs_expanded(:, 2)]); % sort by BPC number and descending plotweight)
+    T = table(sites(order, 1), BPCs_expanded(order, 1), BPCs_expanded(order, 2), ...
+              'VariableNames', {'electrical_stimulation_site', 'BPC', 'SNR'});
+    writetable(T, fullfile('output', 'CARsensitivityTest', sub, sprintf('sub-%s_ch-%s_BPCSNR.tsv', sub, ch)), ...
+              'Filetype','text', 'Delimiter','\t'); 
     
 end

@@ -64,15 +64,10 @@ determineStimSites
 % Output is saved to 'output\methodsFigure\.'
 methodfigMatrices
 
-%% 4 For figures 2 and 6. Save subject-level BPCs and per-subject wavelet spectrogram, broadband estimates, for all measurement elecs.
+%% 4a. For figures 2 and 6. Save subject-level BPCs and per-subject wavelet spectrogram, broadband estimates, for all measurement elecs.
 
 % Output is saved to 'output\sub-X\.' for each subject X
 saveBPCs
-
-% This saves stim sites ploted to T1 MRI slices and inflated pial renderings for subject 1, colored by BPC color
-% You will need to manually click at (Z, X) = (-15.0, -23.0) on the coronal slice
-% Output is saved to 'output\sub-1\.'
-plotInflatedT1slicesSub1.m
 
 %% 5. Save Destrieux cortical labels to each stim site in the output BPCSNR.tsv files.
 
@@ -103,41 +98,12 @@ bpcSpectraBB
 % Output is saved to 'output\spectralBBs\.'
 fig5_exStimsite
 
-%% 9. Create Basis Profile Spectrograms (BPS) for all subjects/measurement electrodes, and quantify similarity to BPCs
-
-% Outputs are saved to 'output\BPS\.'
-overlapWithBPS
-
-%% 10. Monopolar subject-level BPC outputs without common average rereferencing (CAR sensitivity analysis)
-
-% Outputs are saved to 'output\CARsensitivityTest\sub-1\.'
-BPCsNoCAR
-
-% This saves stim sites ploted to T1 MRI slices and inflated pial renderings for subject 1, colored by BPC color, with no CAR
-% You will need to manually click at (Z, X) = (-15.0, -23.0) on the coronal slice
-% Output is saved to 'output\CARsensitivityTest\sub-1\.'
-plotInflatedT1slicesSub1_noCAR.m
-
-% Run this to generate outputs of channels that are included/excluded in the generation of the CAR for a CCEP trial
-% Outputs are saved to 'output\CARsensitivityTest\.'
-fig_CARex
-
-%% 11. Distance between stim site - measurement electrode vs. consensus BPC assignment or BPC SNR
-
-% Outputs are saved to 'output\distanceVBPC\.'
-distanceVBPC
-
-%% 12. Calculate alternative single-step BPCs by pooling CCEPs across all subjects and applying BPC algorithm
-
-% Outputs are saved to 'output\consensusBPCsPooled\.'
-consensusBPCsPooled
-
-%% 13. Plot stim sites by consensus BPC on inflated subject pial renderings. Also plot BPCs colored/ordered by consensus identity
+%% 9. Plot stim sites by consensus BPC on inflated subject pial renderings. Also plot BPCs colored/ordered by consensus identity
 
 % Output is saved to 'output\sub-X\inflated\.'
 plotInflatedBPCs
 
-%% 14. Plot stim sites by consensus BPC color on subject T1 MRI slices
+%% 10. Plot stim sites by consensus BPC color on subject T1 MRI slices
 
 % Sections 2 and 3 of plotBPCs2Slice must be run iteratively for each subject and measurement electrode number:
 % Running section 2 pulls up the interactive T1 MRI slice GUI. Click on the (Z, X) positions in the coronal slice
@@ -148,20 +114,26 @@ plotInflatedBPCs
 % Outputs are saved to 'output\sub-X\hippAmygSlices\.'
 plotBPCs2Slice
 
-%% 15. Subject-level BPC outputs without initial exponential weighting and unweighting steps
+%% 11. Create Basis Profile Spectrograms (BPS) for all subjects/measurement electrodes, and quantify similarity to BPCs
 
-% Outputs are saved to 'output\noExp\sub-X\.' for the requested subject (1 in manuscript)
-% Type in zeta threshold when prompted. Zeta = 1 will yield 2 clusters, and zeta > 1.31 (e.g. 1.4) will yield 3 clusters
-figRev_noExpWeight
+% Outputs are saved to 'output\BPS\.'
+overlapWithBPS
 
-%% 16. Comparison of the spectrum interpolation line noise removal used in this manuscript to standard notch filter
-% Quality check figure 1 on OpenNeuro
+%% 12. Monopolar subject-level BPC outputs without common average rereferencing (CAR sensitivity analysis)
+
+% Outputs are saved to 'output\CARsensitivityTest\sub-1\.'
+BPCsNoCAR
+
+% Run this to generate outputs of channels that are included/excluded in the generation of the CAR for a CCEP trial
+% Outputs are saved to 'output\CARsensitivityTest\.'
+fig_CARex
+
+%% 13. Comparison of the spectrum interpolation line noise removal used in this manuscript to standard notch filter
 
 % Outputs are saved to 'output\LNremoval\.'
 figQC1_LNremoval
 
-%% 17. Empirically tests that the basis profile spectrograms (BPSs) do not depend on spatio-temporal relationships when using BPC algorithm
-% Quality check figure 2 on OpenNeuro
+%% 14. Distance between stim site - measurement electrode vs. consensus BPC assignment or BPC SNR
 
-% Outputs are saved to 'output\BPS\shuffled\.'
-BPSshuffle
+% Outputs are saved to 'output\distanceVBPC\.'
+distanceVBPC
