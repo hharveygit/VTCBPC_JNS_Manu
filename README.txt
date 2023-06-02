@@ -1,7 +1,8 @@
 If this code is used in a publication, please cite the manuscript:
-    "Electrical stimulation of temporal, limbic circuitry produces multiple distinct responses in human ventral temporal cortex"
-    by H Huang, NM Gregg, G Ojeda Valencia, BH Brinkmann, BN Lundstrom, GA Worrell, KJ Miller, and D Hermes. (Under Review)
-A preprint is available, in the meantime, at doi: https://doi.org/10.1101/2022.07.06.498994
+    Huang, H., Gregg, N. M., Valencia, G. O., Brinkmann, B. H., Lundstrom, B. N., Worrell, G. A., ... & Hermes, D. (2023).
+    Electrical stimulation of temporal and limbic circuitry produces distinct responses in human ventral temporal cortex. Journal of Neuroscience.
+    DOI: https://doi.org/10.1523/JNEUROSCI.1325-22.2023
+    
 Contact info: Harvey Huang, huang.harvey@mayo.edu
 
 Updated 2023/04/20 after second JNeurosci resubmission
